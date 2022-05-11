@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import PeopleDisplay from './components/PeopleDisplay';
+import PlanetDisplay from './components/PlanetDisplay';
+import SearchForm from './components/SearchForm';
+import StarshipDisplay from './components/StarshipDisplay';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <BrowserRouter>
+            <SearchForm />
+            <Routes>
+                <Route path='/' element={<Home />}/>
+                <Route path='/people/:inputID' element={<PeopleDisplay />} />
+                <Route path='/planet/:inputID' element={<PlanetDisplay />} />
+                <Route path='/starships/:inputID' element={<StarshipDisplay />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
