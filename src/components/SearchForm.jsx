@@ -16,7 +16,7 @@ const SearchForm = () => {
             <form onSubmit={submitIntake}>
                 <label htmlFor="selector">Search for:</label>
                 <select onChange={(e) => setSelector(e.target.value)}>
-                    <option>Select Search Parameters</option>
+                    <option hidden>Select Search Parameters</option>
                     <option value="people">People</option>
                     <option value="planet">Planet</option>
                     <option value="starships">Starships</option>
